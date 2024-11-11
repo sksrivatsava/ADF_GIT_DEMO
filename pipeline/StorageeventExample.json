@@ -1,0 +1,67 @@
+{
+	"name": "StorageeventExample",
+	"properties": {
+		"activities": [
+			{
+				"name": "VFolderPath",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "VFolderPath",
+					"value": {
+						"value": "@pipeline().parameters.FolderPath",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "VFileName",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "VFolderPath",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "VFIleName",
+					"value": {
+						"value": "@pipeline().parameters.FileName",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"FolderPath": {
+				"type": "string"
+			},
+			"FileName": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"VFolderPath": {
+				"type": "String"
+			},
+			"VFIleName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-10-23T07:34:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

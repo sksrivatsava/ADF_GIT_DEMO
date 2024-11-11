@@ -1,0 +1,9 @@
+{
+	"name": "DataFactory-wsprct-rg",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6d5dbb93-a59f-40b2-b095-24c37a1621e1",
+		"tenantId": "77f574e9-c26f-4e59-b3dc-a8066323e818"
+	}
+}
